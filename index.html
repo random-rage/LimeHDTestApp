@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LimeHDTestApp</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<div>
+        <div class="container">
+        	<div id="page-loader" class="row"><img class="mx-auto d-block" src="img/loader.gif" /></div>
+            <div id="page-content" class="row d-none">
+                <div class="col-xl-4">
+                    <ul id="ship-list" class="list-group">
+                        <li class="list-group-item"><span>Empty</span></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="tab-content">
+                        <div class="tab-pane fade" role="tabpanel">
+                            <div class="card"><img class="card-img-top w-100 d-block" src="img/loader.gif">
+                                <div class="card-body">
+                                    <h4 class="card-title">Title</h4>
+                                    <p class="card-text">Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <nav style="margin-top: 8px;">
+                        <ul class="pagination">
+                            <li class="page-item disabled" id="page-prev"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li class="page-item" id="page"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item disabled" id="page-next"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
