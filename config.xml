@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://yourdomain/LimeHDTestApp" version="0.2.1" viewmodes="maximized">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/LimeHDTestApp" version="0.2.1" viewmodes="maximized">
+    <access origin="*" subdomains="true"/>
     <tizen:application id="M75rneHKs1.LimeHDTestApp" package="M75rneHKs1" required_version="2.3"/>
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>

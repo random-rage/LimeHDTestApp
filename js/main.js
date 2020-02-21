@@ -1,4 +1,26 @@
 $(function() {
+	// Навигация пультом
+	$(document).keydown(function(e) {
+		switch (e.keyCode) {
+			case 38: // UP
+				$('.list-group-item-action.active').prev().click();
+				break;
+			case 40: // DOWN
+				$('.list-group-item-action.active').next().click();
+				break;
+			case 37: // LEFT
+				$('.page-prev').click();
+				break;
+			case 39: // RIGHT
+				$('.page-next').click();
+				break;
+			case 10009: // RETURN
+				tizen.application.getCurrentApplication().exit();
+				break;
+			default:
+				break;
+		}
+	});
 	loadPage('1');
 });
 
@@ -17,7 +39,7 @@ function setupPagination(current, prev, next) {
 
 	if (prev) {
 		$pagination.append(
-			`<li class="page-item"><a class="page-link" href="${prev}" aria-label="Previous">
+			`<li class="page-item"><a class="page-link page-prev" href="${prev}" aria-label="Previous">
 			 <span aria-hidden="true">«</span></a></li>`
 		);
 	}
@@ -31,7 +53,7 @@ function setupPagination(current, prev, next) {
 	
 	if (next) {
 		$pagination.append(
-			`<li class="page-item"><a class="page-link" href="${next}" aria-label="Next">
+			`<li class="page-item"><a class="page-link page-next" href="${next}" aria-label="Next">
 			 <span aria-hidden="true">»</span></a></li>`
 		);
 	}
@@ -46,7 +68,7 @@ function loadPage(num) {
 	let $page = $('#page-content');
 	let $pageLoader = $('#page-loader');
 	let $pageLoaderImg = $pageLoader.find('img');
-	
+
 	// Скрыть страницу и отобразить loader
 	$page.addClass('d-none');
 	$pageLoader.removeClass('d-none');
@@ -92,7 +114,6 @@ function loadPage(num) {
 			let $listItem = $(`<a class="list-group-item list-group-item-action${first ? ' active' : ''}" 
 								 data-toggle="list" href="#ship-${id}" role="tab">${elem['name']}</a>`);
 			$shipList.append($listItem);
-
 			if (first) {
 				$tabPane.addClass('active show');
 				loadTabPaneImage();
