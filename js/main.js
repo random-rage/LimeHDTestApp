@@ -75,7 +75,7 @@ function loadPage(num) {
 	$pageLoaderImg.attr('src', 'img/loader.gif');
 	
 	// Получение и отображение данных
-	$.get('https://swapi.co/api/starships/?page=' + num, function(data) {
+	$.get('https://swapi.co/api/starships/?page=' + num, function (data) {
 		let $shipList = $('#ship-list');
 		let $tabContent = $('.tab-content');
 		let $tabPaneSample = $('.tab-pane.d-none').clone();
@@ -91,9 +91,7 @@ function loadPage(num) {
 			function loadTabPaneImage() {
 				$tabPane.find('.lazy')
 					.on( "error", function () {
-						let $self = $(this);
-						$self.attr('src', 'img/error.png');
-						$self.attr('alt', 'Error');
+						$(this).attr('src', 'img/error.png').attr('alt', 'Error');
 					})
 					.removeClass('lazy')
 					.attr('src', `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`);
@@ -114,6 +112,7 @@ function loadPage(num) {
 			let $listItem = $(`<a class="list-group-item list-group-item-action${first ? ' active' : ''}" 
 								 data-toggle="list" href="#ship-${id}" role="tab">${elem['name']}</a>`);
 			$shipList.append($listItem);
+
 			if (first) {
 				$tabPane.addClass('active show');
 				loadTabPaneImage();
@@ -130,8 +129,7 @@ function loadPage(num) {
 		// Скрыть loader и отобразить страницу
 		$pageLoader.addClass('d-none');
 		$page.removeClass('d-none');
-	}).fail(function() {
-		$pageLoaderImg.attr('src', 'img/error.png');
-		$pageLoaderImg.attr('alt', 'Error');
+	}).fail(function () {
+		$pageLoaderImg.attr('src', 'img/error.png').attr('alt', 'Error');
 	});
 }
