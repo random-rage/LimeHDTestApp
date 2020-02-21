@@ -1,5 +1,11 @@
-* {
-}
 body {
     background-color: #ffffff;
+}
+
+nav {
+    margin-top: 8px;
+}
+
+.contain {
+    object-fit: contain;
 }
